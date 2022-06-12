@@ -207,9 +207,11 @@ export const getFeaturedPosts = async () => {
 };
 
 export const submitComment = async (obj) => {
-  const result = await fetch('https://graphcms-blog-xi.vercel.app/api/comments'  , {
+  const result = await fetch('/api/comments', {
     method: 'POST',
     headers: {
+      "Access-Control-Allow-Origin" : "*", 
+      "Access-Control-Allow-Credentials" : true ,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(obj),
